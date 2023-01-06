@@ -1,0 +1,42 @@
+.cart {
+    width: 500px;
+    margin: 0 auto;
+  }
+  
+  .cart table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .cart table thead th,
+  .cart table tfoot td {
+    text-align: left;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    background-color: #eee;
+  }
+  
+  .cart table tbody td {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .cart table tbody td:last-child {
+    text-align: right;
+  }
+  
+  .checkout-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+  }
+  
+  .checkout-button:hover {
+    background-color: #444;
+  }
+  

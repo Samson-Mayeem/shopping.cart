@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>
+          Product 1 - $10
+          <button class="add-to-cart" data-name="Product 1" data-price="10">Add to Cart</button>
+        </li>
+        <li>
+          Product 2 - $20
+          <button class="add-to-cart" data-name="Product 2" data-price="20">Add to Cart</button>
+        </li>
+      </ul>
+      
+      <!-- Shopping cart -->
+      <div class="cart">
+        <table>
+          <!-- Table structure and headings -->
+        </table>
+      </div>
+      
+      <!-- JavaScript -->
+      <script>
+        const addToCartButtons = document.querySelectorAll(".add-to-cart");
+        const cartTable = document.querySelector(".cart table");
+      
+        function addToCart(event) {
+          // Get the product name and price from the button's data attributes
+          const name = event.target.dataset.name;
+          const price = event.target.dataset.price;
+      
+          // Create a new row for the product in the cart table
+          const row = document.createElement("tr");
+          row.innerHTML = `
+            <td>${name}</td>
+            <td><input type="number" value="1" min="1"></td>
+            <td>$${price}</td>
+            <td>$${price}</td>
+          `;
+          cartTable.appendChild(row);
+      
+          // Update the total when the quantity changes
+          const quantityInput = row.querySelector("input");
+          quantityInput.addEventListener("input", updateTotal);
+        }
+      
+        function updateTotal() {
+          // Calculate the total in the same way as before
+        }
+      
+        // Add an event listener to each "Add to Cart" button
+        for (let button of addToCartButtons) {
+          button.addEventListener("click", addToCart);
+        }
+    </script>
+</body>
+</html>
